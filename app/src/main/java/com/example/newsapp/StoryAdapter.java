@@ -34,6 +34,8 @@ public class StoryAdapter extends ArrayAdapter<NewsObject> {
         story_section.setText(newsObject.getSection());
         TextView story_date = convertView.findViewById(R.id.story_date);
         story_date.setText(newsObject.getDate());
+        TextView story_auther = convertView.findViewById(R.id.story_auther);
+        story_auther.setText(newsObject.getmAuthor());
         RelativeLayout myContainer = convertView.findViewById(R.id.myContainer);
         myContainer.setOnClickListener(new View.OnClickListener() {
             @Override

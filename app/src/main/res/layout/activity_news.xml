@@ -10,6 +10,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
+        android:text="@string/noDataText"
+        android:textSize="26sp"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/tv_noInternet"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
         android:text="@string/noConnectionText"
         android:textSize="26sp"
         android:visibility="gone" />
@@ -29,7 +38,7 @@
         android:id="@+id/myLinear"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#DC000000"
+        android:background="@android:color/darker_gray"
         android:gravity="center">
 
         <ProgressBar

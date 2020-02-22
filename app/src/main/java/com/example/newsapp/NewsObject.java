@@ -5,12 +5,19 @@ class NewsObject {
     private String mSection;
     private String mDate;
     private String mLink;
+    private String mAuthor;
 
-    NewsObject(String title, String section, String date, String link) {
+
+    NewsObject(String title, String section, String mAuthor, String date, String link) {
         this.mTitle = title;
         this.mSection = section;
         this.mDate = date;
         this.mLink = link;
+        this.mAuthor = mAuthor;
+    }
+
+    public String getmAuthor() {
+        return mAuthor;
     }
 
     String getTitle() {

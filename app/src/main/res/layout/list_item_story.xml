@@ -22,12 +22,20 @@
         android:layout_marginTop="5dp"
         android:textColor="@android:color/black"
         android:textSize="18sp" />
+    <TextView
+        android:id="@+id/story_auther"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/story_section"
+        android:layout_marginTop="5dp"
+        android:gravity="right"
+        android:textSize="18sp" />
 
     <TextView
         android:id="@+id/story_date"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/story_section"
+        android:layout_below="@id/story_auther"
         android:layout_marginTop="5dp"
         android:gravity="right" />
 
