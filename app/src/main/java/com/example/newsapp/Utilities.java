@@ -32,7 +32,7 @@ public final class Utilities {
             for (int i = 0; i < jsonArray.length(); i++) {
                 JSONObject JSONObject = jsonArray.getJSONObject(i);
                 // extracting title
-                String title = JSONObject.getString(Constants.WEBTITLE);
+                String title = JSONObject.getString(Constants.WEB_TITLE);
                 // extracting section name
                 String section = JSONObject.getString(Constants.SECTION_NAME);
                 // sorting out the date and time
@@ -45,7 +45,7 @@ public final class Utilities {
                 // extracting the name of the author if there is one
                 String author;
                 try {
-                    author = JSONObject.getJSONArray(Constants.TAGS).getJSONObject(0).getString(Constants.WEBTITLE);
+                    author = JSONObject.getJSONArray(Constants.TAGS).getJSONObject(0).getString(Constants.WEB_TITLE);
                 } catch (JSONException e) {
                     author = Constants.NOT_KNOWN;
                 }

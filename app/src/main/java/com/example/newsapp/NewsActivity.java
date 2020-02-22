@@ -3,6 +3,7 @@ package com.example.newsapp;
 import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -46,7 +47,14 @@ public class NewsActivity extends AppCompatActivity implements LoaderManager.Loa
 
     @Override
     public Loader<ArrayList<NewsObject>> onCreateLoader(int id, @Nullable Bundle args) {
-        String newUrl = getResources().getString(R.string.URL) + "&show-tags=contributor";
+        Uri.Builder uri = new Uri.Builder();
+        uri.scheme("https")
+                .appendPath("content.guardianapis.com")
+                .appendPath("search")
+                .appendQueryParameter("api-key", "f5939c6d-436c-4d7f-9743-32bcaf42628b")
+                .appendQueryParameter("show-tags", "contributor");
+        String newUrl = uri.build().toString();
+        myList = findViewById(R.id.list_view);
         return new MyLoader(this, newUrl);
     }
 
@@ -67,7 +75,6 @@ public class NewsActivity extends AppCompatActivity implements LoaderManager.Loa
     }
 
     private void updateUi(ArrayList<NewsObject> data) {
-        myList = findViewById(R.id.list_view);
         myAdapter = new StoryAdapter(this, data);
         myList.setAdapter(myAdapter);
     }
