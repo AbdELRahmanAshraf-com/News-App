@@ -56,11 +56,6 @@ public final class Utilities {
         } catch (JSONException e) {
             e.printStackTrace();
         }
-
-//    if (newsItems.isEmpty()) {
-//        return null;
-//        textView2.setVisibility(View.VISIBLE);
-//    }
         return newsItems;
     }
 
@@ -93,7 +88,7 @@ public final class Utilities {
         return url;
     }
 
-    public static String loadJSON(URL url) throws IOException {
+    public static String loadJSON(URL url) {
         String jsonResponse = "";
         HttpURLConnection urlConnection = null;
         InputStream inputStream = null;
@@ -109,7 +104,6 @@ public final class Utilities {
             if (urlConnection.getResponseCode() == 200) {
                 inputStream = urlConnection.getInputStream();
                 jsonResponse = convertInputStreamToString(inputStream);
-//                publishProgress(jsonResponse);
             } else {
                 return null;
             }

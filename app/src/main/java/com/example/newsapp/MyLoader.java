@@ -6,7 +6,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.loader.content.AsyncTaskLoader;
 
-import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 
@@ -30,11 +29,7 @@ public class MyLoader extends AsyncTaskLoader<ArrayList<NewsObject>> {
             return null;
         }
         String jsonResponse = "";
-        try {
-            jsonResponse = Utilities.loadJSON(url);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        jsonResponse = Utilities.loadJSON(url);
         return Utilities.extractNewsObjects(jsonResponse);
     }
 }
